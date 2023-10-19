@@ -1,0 +1,88 @@
+{
+    "name": "Myproduct store",
+    "description": "this is the definition object for an api rest syste that allows users regiter categories of products, type of products, and  products, to control the inventory of a clhotes store",
+    "database": {
+        "category": {
+            "operation": {
+                "all": true
+            },
+            "definition": {
+                "name": {
+                    "type": "string",
+                    "mandatory": true
+                },
+                "active": {
+                    "type": "boolean",
+                    "mandatory": true,
+                    "default": false
+                },
+                "key": {
+                    "type": "number"
+                }
+            },
+            "datatable_search_fields": [
+                "name"
+            ]
+        },
+        "type": {
+            "operation": {
+                "all": true
+            },
+            "definition": {
+                "name": {
+                    "type": "string",
+                    "mandatory": true
+                },
+                "active": {
+                    "type": "boolean",
+                    "mandatory": true,
+                    "default": false
+                },
+                "key": {
+                    "type": "number"
+                }
+            },
+            "datatable_search_fields": [
+                "name"
+            ]
+        },
+        "product": {
+            "operation": {
+                "all": true
+            },
+            "definition": {
+                "name": {
+                    "type": "string",
+                    "mandatory": true
+                },
+                "description": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number",
+                    "mandatory": true,
+                    "default": 0
+                },
+                "type": {
+                    "type": "oid",
+                    "rel": "type"
+                },
+                "category": {
+                    "type": "oid",
+                    "rel": "category"
+                },
+                "moreInfo": {
+                    "type": "any"
+                }
+            },
+            "datatable_search_fields": [
+                "name"
+            ]
+        }
+    },
+    "isComplete": false,
+    "api_path": "/api/",
+    "system_user": "erick",
+    "password": "1234567890",
+    "response_to_user": "Please tell me if you need to save user sales in a table of sales, Be descriptive"
+}
